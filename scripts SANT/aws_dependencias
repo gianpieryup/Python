@@ -1,0 +1,33 @@
+from datetime import date
+import os
+import sys
+
+if __name__ == '__main__':
+    print('*'*16)
+    print('* DEPENDENCIAS *')
+    print('*'*16)
+
+    fecha = sys.argv[1] # Argumento del script
+
+    
+    # Al parecer usa python 2.7 y no funciona el f-string 
+    print('-'*10)
+    print("wagucdex")
+    print('-'*10)    
+    os.system("aws s3 ls sarp1ae1as3zonda0lake001/santander/bi-corp/staging/garra/wagucdex/partition_date={}/".format(fecha))
+    print('-'*10)print()
+
+    #AUMENTAR
+
+
+'''    
+cd /aplicaciones/bi/
+
+crear el archivo 
+cat > filename.txt
+Así se crea el archivo y puedes comenzar a rellenarlo con texto. Para agregar varias líneas de texto, simplemente presiona Enter al final de cada línea. Cuando hayas terminado, presiona CTRL + D para salir del arc
+
+
+
+os.system(f"aws s3 ls sarp1ae1as3zonda0lake001/santander/bi-corp/staging/garra/wagucdex/partition_date={date}")
+'''
