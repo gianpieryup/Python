@@ -7,56 +7,56 @@ if __name__ == '__main__':
     fecha = sys.argv[1] # Argumento fecha del script
     dag = 'LOAD_CMN_Cuentas_Movimientos'
     # Al parecer usa python 2.7 y no funciona el f-string 
-    print('##################### Dependencies for {} at partition_date = {} #####################'.format(dag,fecha))
+    print('############## Dependencies for {} at partition_date = {} ##############'.format(dag,fecha))
 
-    print('-'*10,"malpe_pedt008",'-'*10)   
+    print('-'*5,"malpe_pedt008",'-'*5)   
     #os.system("aws s3 ls sarp1ae1as3zonda0lake001/santander/bi-corp/staging/malpe/pedt008/partition_date={}/".format(fecha))
     
-    print('-'*10,"bgdtmae",'-'*10)   
+    print('-'*5,"bgdtmae",'-'*5)   
     #os.system("aws s3 ls sarp1ae1as3zonda0lake001/santander/bi-corp/staging/malbgc/bgdtmae/partition_date={}/".format(fecha))
     
-    print('-'*10,"bgdtaux",'-'*10)   
+    print('-'*5,"bgdtaux",'-'*5)   
     #os.system("aws s3 ls sarp1ae1as3zonda0lake001/santander/bi-corp/staging/malbgc/bgdtaux/partition_date={}/".format(fecha))
     
-    print('-'*10,"malbgc_bgdtmoh",'-'*10)   
+    print('-'*5,"malbgc_bgdtmoh",'-'*5)   
     #os.system("aws s3 ls sarp1ae1as3zonda0lake001/santander/bi-corp/staging/malbgc/bgdtmoh/partition_date={}/".format(fecha))
     
-    print('-'*10,"malbgc_bgdtmoh_emp",'-'*10)   
+    print('-'*5,"malbgc_bgdtmoh_emp",'-'*5)   
     #os.system("aws s3 ls sarp1ae1as3zonda0lake001/santander/bi-corp/staging/malbgc/bgdtmoh_emp/partition_date={}/".format(fecha))
     
-    print('-'*10,"malbgc_zbdtmig",'-'*10)   
+    print('-'*5,"malbgc_zbdtmig",'-'*5)   
     #os.system("aws s3 ls sarp1ae1as3zonda0lake001/santander/bi-corp/staging/malbgc/zbdtmig/partition_date={}/".format(fecha))
     
-    print('-'*10,"bgdtcoo",'-'*10)   
+    print('-'*5,"bgdtcoo",'-'*5)   
     #os.system("aws s3 ls sarp1ae1as3zonda0lake001/santander/bi-corp/staging/malbgc/bgdtcoo/partition_date={}/".format(fecha))
     
 
 
     dag = 'LOAD_CMN_Cuentas_aws'
-    print('##################### Dependencies for {} at partition_date = {} #####################'.format(dag,fecha))
+    print('\n############## Dependencies for {} at partition_date = {} ##############'.format(dag,fecha))
 
-    #bi_corp_common.stk_cue_movimientos_genuinos
-    # necesito este que necesita terminar
+    print('-'*5,"stk_cue_movimientos_genuinos",'-'*5)  
+    print('El DAG LOAD_CMN_Cuentas_Movimientos debe estar completo')
 
-    print('-'*10,"malpe_pedt008",'-'*10)   
+    print('-'*5,"malpe_pedt008",'-'*5)   
     #os.system("aws s3 ls sarp1ae1as3zonda0lake001/santander/bi-corp/staging/malpe/pedt008/partition_date={}/".format(fecha))
     
-    print('-'*10,"malpe_pedt042",'-'*10)   
+    print('-'*5,"malpe_pedt042",'-'*5)   
     #os.system("aws s3 ls sarp1ae1as3zonda0lake001/santander/bi-corp/staging/malpe/pedt042/partition_date={}/".format(fecha))
     
-    print('-'*10,"tcdtgen",'-'*10)   
+    print('-'*5,"tcdtgen",'-'*5)   
     #os.system("aws s3 ls sarp1ae1as3zonda0lake001/santander/bi-corp/staging/maltc/tcdtgen/partition_date={}/".format(fecha))
  
-    print('-'*10,"garra_wagucdex",'-'*10)   
+    print('-'*5,"garra_wagucdex",'-'*5)   
     #os.system("aws s3 ls sarp1ae1as3zonda0lake001/santander/bi-corp/staging/garra/wagucdex/partition_date={}/".format(fecha))
  
-    print('-'*10,"bgdtmae",'-'*10)   
+    print('-'*5,"bgdtmae",'-'*5)   
     #os.system("aws s3 ls sarp1ae1as3zonda0lake001/santander/bi-corp/staging/malbgc/bgdtmae/partition_date={}/".format(fecha))
 
-    print('-'*10,"bgdtaux",'-'*10)   
+    print('-'*5,"bgdtaux",'-'*5)   
     #os.system("aws s3 ls sarp1ae1as3zonda0lake001/santander/bi-corp/staging/malbgc/bgdtaux/partition_date={}/".format(fecha))
 
-    print('-'*10,"malbgc_bgdtacu",'-'*10)   
+    print('-'*5,"malbgc_bgdtacu",'-'*5)   
     #os.system("aws s3 ls sarp1ae1as3zonda0lake001/santander/bi-corp/staging/malbgc/bgdtacu/consolidated/partition_date={}/".format(fecha))
   
 	
