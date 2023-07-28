@@ -31,6 +31,13 @@ Codigo linux de copiar un archivo de una ruta a un destino, hacerlo manualmente 
 
 python -m pip install .
 
+.-------------
+
+
+
+https://stackoverflow.com/questions/71759248/importerror-cannot-import-name-builder-from-google-protobuf-internal
+
+
 
 
 
