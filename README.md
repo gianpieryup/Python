@@ -12,6 +12,13 @@ protoc-23.4-win64.zip
 
 protoc object_detection/protos/*.proto --python_out=.
 
+pip install cython
+
+pip install git+https://github.com/philferriere/cocoapi.git#subdirectory=PythonAPI
+
+cp object_detection/packages/tf2/setup.py .
+
+python -m pip install .
 
 
 https://github.com/tensorflow/models/blob/master/research/object_detection/colab_tutorials/eager_few_shot_od_training_tf2_colab.ipynb
