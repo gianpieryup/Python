@@ -10,6 +10,8 @@ git clone --depth 1 https://github.com/tensorflow/models
 protoc-23.4-win64.zip
 
 
+protoc object_detection/protos/*.proto --python_out=.
+
 
 
 https://github.com/tensorflow/models/blob/master/research/object_detection/colab_tutorials/eager_few_shot_od_training_tf2_colab.ipynb
