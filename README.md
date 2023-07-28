@@ -5,7 +5,8 @@ pip install tensorflow==2.10.1
 
 git clone --depth 1 https://github.com/tensorflow/models
 
-https://github.com/protocolbuffers/protobuf/releases
+[https://github.com/protocolbuffers/protobuf/releases](https://github.com/protocolbuffers/protobuf/releases/tag/v23.4)
+
 protoc-23.4-win64.zip
 
 
