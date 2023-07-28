@@ -14,11 +14,24 @@ protoc object_detection/protos/*.proto --python_out=.
 
 pip install cython
 
+**Este me salio con error pero creo no importa**
+
 pip install git+https://github.com/philferriere/cocoapi.git#subdirectory=PythonAPI
 
+8. La instalación de la API de detección de objetos se logra instalando el paquete `object_detection`. Esto se hace ejecutando los siguientes comandos desde dentro \models\research:
+
 cp object_detection/packages/tf2/setup.py .
+-- Pero como esto no existe en windos, es copiar ese setup.py en la ruta donde estamos parados la `\models\research`
+
+
+cp [...file/directory-sources] [destination]
+Codigo linux de copiar un archivo de una ruta a un destino, hacerlo manualmente porque en windows no existe ese comando por ahí en powershell si
+
+
 
 python -m pip install .
+
+
 
 
 https://github.com/tensorflow/models/blob/master/research/object_detection/colab_tutorials/eager_few_shot_od_training_tf2_colab.ipynb
