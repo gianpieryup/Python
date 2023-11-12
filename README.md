@@ -8,3 +8,13 @@ Todos mis scripts ya sea python o pyspark
 ## Pyspark
 
 Todas las notebooks que tenemos
+
+```python
+import os
+import sys
+
+print(os.path.dirname(sys.executable))
+
+# Para usar pyspark local debes instalar esta dependencia,
+#pip install findspark
+```
