@@ -9,16 +9,23 @@ Todos mis scripts ya sea python o pyspark
 
 **pickle** : Para guardar un json(una lista, etc) en un archivo y luego poder levantarlo en cualquier momento 
 
-## Pyspark
 
-Todas las notebooks que tenemos
+> [!TIP]
+> Como saber donde tenemos Python instalado.
+
+
 
 ```python
 import os
 import sys
 
 print(os.path.dirname(sys.executable))
-
-# Para usar pyspark local debes instalar esta dependencia,
-#pip install findspark
 ```
+
+
+#### Pyspark
+
+Para usar pyspark local debes instalar esta dependencia,
+
+> [!NOTE]
+> pip install findspark
