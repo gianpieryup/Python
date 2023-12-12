@@ -8,7 +8,6 @@ log = None
 s = None
 AWS_BUCKET_S3 = 'sarp1ae1as3zonda0lake001'
 
-
 def get_contexts():
     spark = SparkSession.builder \
         .enableHiveSupport() \
@@ -35,31 +34,26 @@ def get_contexts():
 
     return spark
 
-
 def riesgos_loader(spark):
     
     query_json = f"""
     select json, partition_date
     from bi_corp_staging.json_onboarding_unico
-    where partition_date= '2023-10-31'
+    where partition_date= '2023-10-31'  -- En produccion: '{expandvars('${partition_date}')}'
     """
-    #'{expandvars('${partition_date}')}'
     
     df_json = spark.sql(query_json)
 
     # ======================================
-    # # Descargar un archivo leerlo
+    # Descargar un archivo de landing para ingerir la estructura por unica vez
+    # 
     # df = spark.read.text("ONBO_GIAN_20230920.csv")
     # json_schema_df = spark.read.json(df.rdd.map(lambda row: row.value))
     # json_schema = json_schema_df.schema
     # json_schema
     # # Copiar y pegar este resultado en la siguiente linea
 
-    # ======================================
-    # Esto determinaba el SCHEMA a partir de lo que habia en df_json (pero esto dependera de los datos que tenga el dataframe)
-    # Ademas que lo hara en cada proceso.
-    # json_schema_df = spark.read.json(df_json.rdd.map(lambda row: row.json))
-    # json_schema = json_schema_df.schema
+
 
 
     json_schema = StructType([StructField('_id', StructType([StructField('$oid', StringType(), True)]), True),
@@ -137,6 +131,8 @@ def riesgos_loader(spark):
     df = df_details.select(col("parsed_data.*"),col("partition_date"))
     df.printSchema()
 
+
+
     # EXPLOID de una lista en VERTICAL
     print("EXPLOIDE delays")
     df = df.withColumn("delays_explode", explode_outer("delays"))
@@ -148,7 +144,8 @@ def riesgos_loader(spark):
         df.offerData.packages[0].alias('of')
     )
 
-    # TODO COPIARTE EL SCHEMA PERO DE TODA LA TABLA
+
+    # SELECT FINAL
     df_final= df.select(col("_id.$oid").alias("id"),
         col("admission.asol_errors").cast(StringType()).alias("admission_asol_errors"),
         from_unixtime(col("admission.registration_date.$date")/1000, "yyyy-MM-dd HH:mm:ss").alias("admission_registration_date"),
@@ -280,6 +277,9 @@ def riesgos_loader(spark):
     # print("EXAMPLE INDIVIDUAL")
     # df_final.filter("id = '6500fb91c8733d11d476d832'").show()
 
+    # .saveAsTable : Lo que hace es DROP/CREATE de la tabla
+    # Te ayuda cuando esas desarrollando
+
     df_final \
         .write \
         .partitionBy('partition_date') \
@@ -288,6 +288,9 @@ def riesgos_loader(spark):
                         format='parquet',
                         mode='Overwrite',
                         path='/santander/bi-corp/staging/onboarding/unico_gian')
+    
+    # [ISSUE] Cuando ya tienes la estructura y vas a produccion, porfavor usar el metodo de guardado
+
 
 if __name__ == "__main__":
     
