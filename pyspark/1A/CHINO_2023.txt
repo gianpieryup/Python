@@ -1,0 +1,1 @@
+{"records":[{"idClase":"1682","nombre":"1810 Mas Ahorro","moneda":"ARS","fecha":"13/03/24"},{"idClase":"1683","nombre":"1812 Menos Ahorro","moneda":"ARS","fecha":"13/03/24"},{"idClase":"1684","nombre":"100 Monotributo","moneda":"ARS","fecha":"13/03/24"}]}
