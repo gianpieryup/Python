@@ -26,7 +26,7 @@ Esto nos sirve en caso en caso quisieramos tener python desde cualquier ruta en 
 - [MONGO](https://mongoplayground.net/) : Para hacer querys de mongo de forma online:
 - [UNIX](https://www.epochconverter.com/) : Fecha Unix
 - [ASCII](https://bytetool.web.app/en/ascii/) : Tabla ascii
-
+- [cmd](https://rctorr.wordpress.com/2014/01/16/procesando-parametros-en-la-linea-de-comando-en-python/) : procesando parametros por linea de comando
 
 #### Adicionales
 
