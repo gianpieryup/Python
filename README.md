@@ -18,6 +18,12 @@ print(os.path.dirname(sys.executable))
 Esto nos sirve en caso en caso quisieramos tener python desde cualquier ruta en el cmd.
 
 
+> [!TIP]
+> Versiones de python, existen generalmente dos versiones la 2.7 y la 3.* , como aun pueden haber codigos que corran en la version 2.7 se puede especificar que tipo de version correr nuestro script, generalmente la convencion es:
+```console
+compu> python script.py            -- corre python 2.7
+compu> python3 script.py           -- corre python 3.*
+```
 
 
 #### Enlaces Interesantes
