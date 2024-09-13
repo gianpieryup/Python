@@ -38,7 +38,7 @@ def loader(spark):
     # ======================================
     # Descargar un archivo de landing para ingerir la estructura por unica vez
     # 
-    # df = spark.read.text("ONBO_GIAN_20230920.csv")
+    # df = spark.read.text("GIAN_20230920.csv")
     # json_schema_df = spark.read.json(df.rdd.map(lambda row: row.value))
     # json_schema = json_schema_df.schema
     # json_schema
@@ -66,11 +66,9 @@ def loader(spark):
     ])
 
 
-    #Apply the schema to payload to read the data    
-    df_details = df_json.withColumn("parsed_data", from_json(df_json["json"], json_schema)).drop("json")
-    #Bajamas un nivel para no hacer 'parsed_data.columna'
-    df = df_details.select(col("parsed_data.*"),col("partition_date"))
-    df.printSchema()
+    #Apply the schema to payload to read the data 
+    df = df_json.withColumn("parsed_data",from_json(col("json"),json_schema)) \
+                   .select("parsed_data.*", col("partition_date"))
 
 
 
