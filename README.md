@@ -4,7 +4,7 @@
 
 # Python
 
-Todos los apuntes y scripts
+Todos los apuntes y scripts :smile:
 
 > [!TIP]
 > Como saber donde tenemos Python instalado.
