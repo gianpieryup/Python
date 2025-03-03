@@ -11,6 +11,33 @@ df.show(truncate=False)
 df.show(20, False)
 ```
 
+## Lectura Archivos Pesados
+
+Como leer archivos de texto pesados con python
+
+Usando **generadores**, *lazy functions* para no cargar todo en memoria y asi poder leer linea por linea de archivos grandes.
+
+```py
+def leer_lineas(archivo, numero_linea):
+  buffer = []
+  with open(archivo, 'r', enconding = 'utf-8') as f:
+    for linea in f:
+        buffer.append(linea)
+        if len(buffer) == numero_linea:
+            yield buffer
+            buffer = []
+    if len(buffer) > 0:
+       yield buffer
+
+
+for bloque in leer_lineas('archivo.txt', 5):
+    print('\n'.join(bloque))
+
+    continuar = input('Presione Enter para continuar, "q" para salir: ')
+    if continuar == 'q':
+        break
+```
+
 
 ### Parsear
 
