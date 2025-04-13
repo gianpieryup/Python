@@ -1,5 +1,28 @@
 # Pyspark
 
+# Instalacion
+
+La opcion de usar **docker**, me soluciona muchos temas vinculados a la instalacion de spark
+
+[Video Tutorial](https://youtu.be/HqIt0I_QQ8g?si=3sIR7Anhi0MCQQjO) de Youtube, basicamente es bajar la imagen de `jupyter/pyspark-notebook`
+
+## Comenzar
+
+Una vez instalado
+
+1. Prender el docker, esto es simplemente abrir el **Docker Desktop** y ver que este en **running**
+2. Levantar el **container** con el comando ``docker exec -it pyspark-vscode bash`` o bien lo puedes hacer desde la interfaz grafica.
+3. En los logs, se vera un msj con la URL para la connection with Jupyter, si le das click te manda a una pagina web.
+
+![URL](data/url_pyspark.png)
+
+
+Para usarlo mediante VScode : `> Seleccionar el Kernel > Servidor de Jupyter existente > ` te va a pedir esa URL copias y pegas en el cuadrito -> ENTER y listo
+
+
+
+
+
 ### Tips
 
 Para mostrar el contenido completo de las columnas de un Dataframe
