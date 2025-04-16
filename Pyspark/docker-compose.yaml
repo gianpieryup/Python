@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  pyspark-notebook:
+    image: jupyter/pyspark-notebook
+    container_name: pyspark-vscode
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/home/gian/

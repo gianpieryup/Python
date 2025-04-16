@@ -1,18 +1,34 @@
 # Pyspark
 
-# Instalacion
+## Instalacion
 
 La opcion de usar **docker**, me soluciona muchos temas vinculados a la instalacion de spark
 
 [Video Tutorial](https://youtu.be/HqIt0I_QQ8g?si=3sIR7Anhi0MCQQjO) de Youtube, basicamente es bajar la imagen de `jupyter/pyspark-notebook`
 
+### Lista Pasos
+
+```sh
+# 1. Prender docker
+cd project_path
+
+# 2. Correr el archivo 'docker-compose.yaml' , el cual instalala la imagen 'jupyter/pyspark-notebook'
+#    Creara un Container con el nombre de la carpeta donde esta parada el archivo 'docker-compose.yaml' 
+docker-compose up -d
+
+# 3. Darle RUN, me da acceso al bash para poder acceder a la raiz del container.
+docker exec -it pyspark-vscode bash
+```
+
+
+
 ## Comenzar
 
-Una vez instalado
+Una vez instalado, es decir terminado el **paso de instalacion**.
 
 1. Prender el docker, esto es simplemente abrir el **Docker Desktop** y ver que este en **running**
 2. Levantar el **container** con el comando ``docker exec -it pyspark-vscode bash`` o bien lo puedes hacer desde la interfaz grafica.
-3. En los logs, se vera un msj con la URL para la connection with Jupyter, si le das click te manda a una pagina web.
+3. En los logs, se vera un msj con la URL para la connection with Jupyter: <br> `To access the server` <br>Si le das click te manda a una pagina web.
 
 ![URL](data/url_pyspark.png)
 
