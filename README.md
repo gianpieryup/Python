@@ -38,10 +38,3 @@ compu> python3 script.py           -- corre python 3.*
 
 - Como crear ejecutables en Python 🐍 [AQUI](https://omes-va.com/como-crear-ejecutables-en-python-pyinstaller-parte-1/)
 - **pickle** : Para guardar un json(una lista, etc) en un archivo y luego poder levantarlo en cualquier momento 
-
-#### Pyspark
-
-Para usar pyspark local debes instalar esta dependencia,
-
-> [!NOTE]
-> pip install findspark
